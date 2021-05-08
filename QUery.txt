@@ -1,0 +1,10 @@
+truncate table subjects
+
+alter table subjects
+add sub_classID int foreign key references Class(Class_id) on delete cascade on update cascade
+
+alter table subjects
+add contraint unique_class_section unique(Sub_name,sub_classID)
+
+alter table Staff
+add constraint username_unique unique(username)
